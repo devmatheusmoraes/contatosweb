@@ -40,11 +40,19 @@ public class RegisterUserController {
 			usuario.setSenha(dto.getSenha());
 			usuario.setEmail(dto.getEmail());
 			
-			usuarioRepository.create(usuario);
+			if (usuarioRepository.findByEmail(usuario.getEmail()) == null) {
 			
-			dto = new RegisterUserDto();
+				usuarioRepository.create(usuario);
 			
-			modelAndView.addObject("mensagem", "Usuário criado com sucesso");
+				dto = new RegisterUserDto();
+			
+				modelAndView.addObject("mensagem", "Usuário criado com sucesso");
+				
+			}else {
+				
+				modelAndView.addObject("mensagem", "E-mail já cadastrado");
+				
+			}
 			
 		}catch(Exception e){
 			modelAndView.addObject("mensagem", e.getMessage());

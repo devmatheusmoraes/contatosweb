@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">
 <head>
@@ -20,23 +21,23 @@
 					</div>
 				</div>
 				
-					<form>
+					<form method="post" action="autenticar-post">
 						<div class="row">
 							<div class="col">
 								<label for="email" class="form-labe">E-mail</label>
-								<input type="email" name="email" id="email" class="form-control">
-							</div>
+								<form:input path="dto.email" type="email" name="email" id="email" class="form-control"/>
+							</div>  
 						</div>
 						<div class="row">
 							<div class="col">
 								<label for="password" class="form-labe">Senha</label>
-								<input type="password" name="password" id="password" class="form-control">
+								<form:input path="dto.senha" type="password" name="password" id="password" class="form-control"/>
 							</div>
 						</div>
 						<div class="row mt-2">
 							<div class="col">
 								<div class="form-check">
-									<input type="checkbox" name="remember" id="remember" class="form-check-input">
+									<input type="checkbox" name="remember" id="remember" class="form-check-input"/>
 									<label for="remember" class="form-check-label">Manter Conectado </label>
 								</div>
 							</div>
@@ -55,6 +56,9 @@
 							</div>
 						</div>
 					</form>
+					<div class="row mt-2 text-center">
+						<h4>${ mensagem }</h4>
+					</div>
 				</div>
 		</div>
 	</div>

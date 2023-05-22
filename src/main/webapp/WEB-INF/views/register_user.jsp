@@ -26,25 +26,28 @@
 						<div class="row">
 							<div class="col">
 								<label class="form-labe">Nome</label>
-								<form:input path="dto.nome" type="text" name="name" id="name" class="form-control"/>
+								<form:input path="dto.nome" type="text" name="name" id="name" class="form-control" required="required"/>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col">
 								<label class="form-labe">Login</label>
-								<form:input path="dto.login" type="text" name="telefone" id="telefone" class="form-control"/>
+								<form:input path="dto.login" type="text" name="telefone" id="telefone" class="form-control" required="required"/>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col">
 								<label for="email" class="form-labe">E-mail de acesso</label>
-								<form:input path="dto.email" type="email" name="email" id="email" class="form-control"/>
+								<form:input path="dto.email" type="email" name="email" id="email" class="form-control" required="required"/>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col">
 								<label for="password" class="form-labe">Senha de acesso</label>
-								<form:input path="dto.senha" type="password" name="password" id="password" class="form-control"/>
+								<form:input path="dto.senha" type="password" name="password" id="password" class="form-control" required="required"
+											pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,}$"
+											title="Informe uma senha com pelo menos 1 letra maiúscula,1 letra minúscula, 1 número, 1 símbolo
+											e no mínimo 8 caracteres."/>
 							</div>
 						</div>
 						<div class="row">
