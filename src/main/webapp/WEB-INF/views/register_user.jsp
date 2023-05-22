@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"
+%>
+    
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">
 <head>
@@ -19,29 +22,29 @@
 					</div>
 				</div>
 				
-					<form>
+					<form method="post" action="register_user-post">
 						<div class="row">
 							<div class="col">
 								<label class="form-labe">Nome</label>
-								<input name="name" id="name" class="form-control">
+								<form:input path="dto.nome" type="text" name="name" id="name" class="form-control"/>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col">
-								<label class="form-labe">Telefone</label>
-								<input name="telefone" id="telefone" class="form-control">
+								<label class="form-labe">Login</label>
+								<form:input path="dto.login" type="text" name="telefone" id="telefone" class="form-control"/>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col">
 								<label for="email" class="form-labe">E-mail de acesso</label>
-								<input type="email" name="email" id="email" class="form-control">
+								<form:input path="dto.email" type="email" name="email" id="email" class="form-control"/>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col">
 								<label for="password" class="form-labe">Senha de acesso</label>
-								<input type="password" name="password" id="password" class="form-control">
+								<form:input path="dto.senha" type="password" name="password" id="password" class="form-control"/>
 							</div>
 						</div>
 						<div class="row">
@@ -52,13 +55,16 @@
 						</div>
 						<div class="row mt-3">
 							<div class="col-12 mb-2 w-100">
-								<a class="btn btn-success w-100" href="/contatosweb/register_user" role="button">Cadastrar</a>
+								<button class="btn btn-success w-100" type="submit">Cadastrar</button>
 							</div>
 							<div class="col-12">
 								<a class="btn btn-primary w-100" href="/contatosweb/" role="button">Voltar</a>
 							</div>
 						</div>
 					</form>
+					<div class="row mt-2 text-center">
+						<h4>${ mensagem }</h4>
+					</div>
 				</div>
 		</div>
 	</div>
